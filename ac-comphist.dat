@@ -1,12 +1,36 @@
-((("message" .
-   [3 0 0 0 0 0 0])
-  ("auto-complete" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0])
-  ("htmlize" .
-   [2 0 0 0 0 0 0])
-  ("require" .
+((("ls-init" .
    [1 0 0 0 0 0 0])
+  ("markdown-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("mer" .
+   [0 0 1])
+  ("src" .
+   [1 0 0])
+  ("color-theme-initialize" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
   ("color-theme" .
    [1 0 0 0 0 0 0 0 0 0 0])
-  ("color-theme-initialize" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])))
+  ("require" .
+   [1 0 0 0 0 0 0])
+  ("htmlize" .
+   [2 0 0 0 0 0 0])
+  ("auto-complete" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("message" .
+   [3 1 0 0 0 0 0])
+  ("scroll-bar-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
+  ("add-hook" .
+   [1 0 0 0 0 0 0 0])
+  ("emacs-lisp-mode-hook" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("ls-lisp-mode-auto-pair" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("message-reply" .
+   [0 0 0 0 0 0 0 2 0 0 0 0 0])
+  ("zjl-hl" .
+   [0 0 0 1 0 0])
+  ("zjl-hl-enable-global-all-modes" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("zjl-hl-enable-global" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])))

@@ -6,12 +6,6 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-(global-set-key [M-f11] 'ls-pelican)
-(defun ls-pelican()
-  (interactive)
-  (compile "pelican -s /Users/leafsoar/Documents/leafsoar.github.com/settings.py -t /Users/leafsoar/Documents/leafsoar.github.com/static/leafsoar-theme"))
-
-
 ;; mac config
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
@@ -20,7 +14,6 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(fset 'yes-or-no-p 'y-or-n-p)
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 (setq column-number-mode t)
@@ -32,12 +25,17 @@
 (setq show-paren-style 'parentheses)
 (mouse-avoidance-mode 'animate)
 (setq visible-bell t)
-
+;; (if window-system
+;;  (tool-bar-mode 0)
+;;  (scroll-bar-mode 0))
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 
-(display-time)
-(ido-mode t)
+;; (ido-mode t)
+
+;; (require 'markdown-mode)
+;; (setq auto-mode-alist
+;;       (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
 (setq org-log-done 'time)
 (setq tab-always-indent nil)
@@ -83,43 +81,16 @@
 (add-hook 'lisp-mode-hook 'ls-lisp-mode-auto-pair)
 (add-hook 'emacs-lisp-mode-hook 'ls-lisp-mode-auto-pair)
 
-
-(global-set-key "%" 'match-paren)
-(defun match-paren (arg)
-  "Go to the matching paren if on a paren; otherwise insert %."
-  (interactive "p")
-  (cond ((looking-at "\\s\(") (forward-list 1) (backward-char 1))
-	((looking-at "\\s\)") (forward-char 1) (backward-list 1))
-	(t (self-insert-command (or arg 1)))))
-
-;; code comment
-(defun ls-comment-dwim-line (&optional arg)
-  "Replacement for the comment-dwim command."
-  (interactive "*P")
-  (comment-normalize-vars)
-  (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
-      (comment-or-uncomment-region (line-beginning-position) (line-end-position))
-    (comment-dwim arg)))
-(global-set-key (kbd "C-; ") 'ls-comment-dwim-line) 
-
-(global-linum-mode 1)
-
-
 ;; elpa config
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
-
-(setq package-enable-at-startup nil) 
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-default-packages '(
-		   auto-complete
-		   htmlize
-		   markdown-mode))
+(defvar my-default-packages '(auto-complete htmlize))
 
 (dolist (p my-default-packages)
   (when (not (package-installed-p p))
@@ -128,20 +99,10 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 
+
 (ac-config-default)  
 (global-auto-complete-mode t)
 (global-set-key "\M-/" 'auto-complete)
-
-;; (require 'markdown-mode)
-;; (setq auto-mode-alist
-;;      (cons '("\\.md" . markdown-mode) auto-mode-alist))
-
-(require 'sr-speedbar)
-(setq sr-speedbar-max-width 40)
-(setq sr-speedbar-right-side nil)
-(global-set-key [f6] 'sr-speedbar-toggle)
-(global-set-key (kbd "C-<f6>") 'sr-speedbar-refresh-toggle)
-(global-set-key (kbd "M-<f6>") 'speedbar-up-directory)  
 
 
 
